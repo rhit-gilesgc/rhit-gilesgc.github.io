@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway&display=swap');
+
+:root {
+    --vertical-space: 2rem;
+    --horizontal-space: 3rem;
+
+    --light-color: #F2F2F2;
+    --body-color: #dddddd;
+    --heading-color: #AEFF00;
+    --contrast-color: #55E80C;
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Raleway', sans-serif;
+    background-image: repeating-linear-gradient(45deg, rgba(226, 226, 226,0.06) 0px, rgba(226, 226, 226,0.06) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgb(33,33,33),rgb(33,33,33));
+    color: var(--body-color);
+}
+
+h1,
+h2 {
+    line-height: 1.2;
+    font-family: 'Bebas Neue', cursive;
+    color: var(--heading-color);
+}
+
+h3 {
+    color: var(--heading-color);
+}
+
+hr {
+    max-width: 50%;
+    margin-left: 0;
+    border-color: var(--contrast-color);
+    background-color: var(--contrast-color);
+    border-width: 0.5px;
+}
+
+a {
+    color: var(--body-color);
+    text-decoration-color: var(--contrast-color);
+    transition: 0.2s;
+}
+
+a:hover {
+    color: var(--contrast-color);
+}
+
+nav ul li > a {
+    padding: 10px 10px;
+    padding-right: 5rem;
+    border-radius: 15px;
+    display: block;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+nav ul li > a:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+nav ul li {
+    margin-bottom: 10px;
+    width: auto;
+}
+
+body#about img {
+    height: 15em;
+}
+
+#portraitImage {
+    float: left;
+    padding: 0 20px 0 0;
+}
+
+p {
+    max-width: 50em;
+}
+
+body {
+    display: grid;
+    grid-template-areas: "head head" "nav nav" "main main" "foot foot";
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto auto 1fr auto;
+}
+
+@media screen and (min-width: 25em) {
+    body {
+        grid-template-areas: "head head" "nav main" "foot foot";
+        grid-template-rows: auto 1fr auto;
+    }
+}
+
+body>* {
+    padding-left: var(--horizontal-space);
+    padding-right: var(--horizontal-space);
+}
+
+body>header {
+    grid-area: head;
+}
+
+body>nav {
+    grid-area: nav;
+}
+
+body>nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+body>nav ul li {
+    padding-right: 1rem;
+}
+
+body>main {
+    grid-area: main;
+}
+
+body>footer {
+    grid-area: foot;
+}
+
+header,
+footer {
+    padding-top: var(--vertical-space);
+    padding-bottom: var(--vertical-space);
+}
+
+header h1,
+footer h1 {
+    margin: 0;
+}
+
+#portfolioItems {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+#portfolioItems > div {
+    flex: 1 0 40%;
+    border: var(--contrast-color) solid 1px;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 5px 20px;
+    transition: 0.2s;
+    background:rgba(0, 0, 0, 0.2);
+}
+
+#portfolioItems > div:hover {
+    border-color: var(--heading-color);
+}
+
+@media screen and (min-width: 25em) {
+    body#portfolio ul#portfolioItems li {
+        flex-basis: 48%;
+        padding-right: 2%;
+    }
+
+    #portfolioItems div #skribblioImage {
+        max-width: 70%;
+    }
+}
+
+#portfolioItems div img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+#portfolioItems div #cccalcImage {
+    float:left;
+    max-width: 40%;
+    margin: 0px 15px 10px 0px;
+}
+
+body#portfolio ul#portfolioItems > li {
+    outline: 1px var(--contrast-color) solid;
+    border-radius: 15px;
+}
